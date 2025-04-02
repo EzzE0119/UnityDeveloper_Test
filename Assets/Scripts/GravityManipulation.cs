@@ -12,12 +12,14 @@ public class GravityManipulation : MonoBehaviour
     private void Start()
     {
         _characterTransform = transform;
+        
     }
 
     private void Update()
     {
-        Vector3 chracterForward = GetClosestWorldAxis(_characterTransform.forward);
-        Vector3 characterRight = GetClosestWorldAxis(_characterTransform.right);
+        //instead of player seting hologram depending on camera
+        Vector3 chracterForward = GetClosestWorldAxis(Camera.main.transform.forward);
+        Vector3 characterRight = GetClosestWorldAxis(Camera.main.transform.right);
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
